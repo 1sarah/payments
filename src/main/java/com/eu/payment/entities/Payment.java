@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 @Entity
 @Table(name = "payments")
@@ -20,5 +21,9 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue
     @UuidGenerator
+    private UUID id;
+    private String paymentStatus;
+    private String transactionId;
+    private UUID orderId;
     private double amount;
 }
